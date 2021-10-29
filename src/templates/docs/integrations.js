@@ -151,130 +151,134 @@ export default function Integrations({
   const contentContainerRef = useRef(null);
 
   const {
-    vscodeImg: {
-      childImageSharp: { fixed: vscodeImgData },
-    },
-    intellijImg: {
-      childImageSharp: { fixed: intellijImgData },
-    },
-    javascriptImg: {
-      childImageSharp: { fixed: javascriptImgData },
-    },
-    browserRecorderImg: {
-      childImageSharp: { fixed: browserRecorderImgData },
-    },
-    testBuilderImg: {
-      childImageSharp: { fixed: testBuilderImgData },
-    },
-    harImg: {
-      childImageSharp: { fixed: harImgData },
-    },
-    postmanImg: {
-      childImageSharp: { fixed: postmanImgData },
-    },
-    swaggerImg: {
-      childImageSharp: { fixed: swaggerImgData },
-    },
-    jmeterImg: {
-      childImageSharp: { fixed: jmeterImgData },
-    },
+    vscodeImg,
+    intellijImg,
+    javascriptImg,
+    browserRecorderImg,
+    testBuilderImg,
+    harImg,
+    postmanImg,
+    swaggerImg,
+    jmeterImg,
   } = useStaticQuery(graphql`
     query stubImageQuery {
       graphqlImg: file(
         absolutePath: { regex: "/images/doc-integrations/graphql/" }
       ) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       azureImg: file(
         absolutePath: { regex: "/images/doc-integrations/azure/" }
       ) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       vscodeImg: file(
         absolutePath: { regex: "/images/doc-integrations/vscode/" }
       ) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       intellijImg: file(
         absolutePath: { regex: "/images/doc-integrations/intellij/" }
       ) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       javascriptImg: file(
         absolutePath: { regex: "/images/doc-integrations/javascript/" }
       ) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       testBuilderImg: file(
         absolutePath: { regex: "/images/doc-integrations/test-builder/" }
       ) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       browserRecorderImg: file(
         absolutePath: { regex: "/images/doc-integrations/browser-recorder/" }
       ) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       harImg: file(absolutePath: { regex: "/images/doc-integrations/har/" }) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       postmanImg: file(
         absolutePath: { regex: "/images/doc-integrations/postman/" }
       ) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       swaggerImg: file(
         absolutePath: { regex: "/images/doc-integrations/openapi/" }
       ) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
       jmeterImg: file(
         absolutePath: { regex: "/images/doc-integrations/jmeter/" }
       ) {
         childImageSharp {
-          fixed(width: 60, height: 60, cropFocus: CENTER) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            width: 60
+            height: 60
+            transformOptions: { cropFocus: CENTER }
+          )
         }
       }
     }
@@ -301,14 +305,14 @@ export default function Integrations({
                 subtitle={'Codeless tools to speed up the test creation.'}
                 linksData={[
                   {
-                    picture: testBuilderImgData,
+                    image: testBuilderImg,
                     title: 'Test Builder',
                     description:
                       'Inspired in Postman API Builder. Codeless UI tool to generate a k6 test quickly.',
                     url: 'https://k6.io/docs/test-authoring/test-builder/',
                   },
                   {
-                    picture: browserRecorderImgData,
+                    image: browserRecorderImg,
                     title: 'Browser Recorder',
                     description: 'Record a user journey to base your k6 test.',
                     url: 'https://k6.io/docs/test-authoring/recording-a-session/browser-recorder/',
@@ -322,19 +326,19 @@ export default function Integrations({
                 }
                 linksData={[
                   {
-                    picture: vscodeImgData,
+                    image: vscodeImg,
                     title: 'Visual Studio Code Extension',
                     description: 'Run k6 tests from VS Code.',
                     url: 'https://marketplace.visualstudio.com/items?itemName=k6.k6',
                   },
                   {
-                    picture: intellijImgData,
+                    image: intellijImg,
                     title: 'IntelliJ IDEA',
                     description: 'Run k6 tests from IntelliJ IDEs.',
                     url: 'https://plugins.jetbrains.com/plugin/16141-k6',
                   },
                   {
-                    picture: javascriptImgData,
+                    image: javascriptImg,
                     title: 'IntelliSense',
                     description:
                       'Get code autocompletion and in-context documentation.',
@@ -347,25 +351,25 @@ export default function Integrations({
                 subtitle={'Generate a k6 script quickly from an existing file.'}
                 linksData={[
                   {
-                    picture: harImgData,
+                    image: harImg,
                     title: 'HAR-to-k6',
                     description: 'Convert a HAR file to k6 script.',
                     url: 'https://github.com/k6io/har-to-k6',
                   },
                   {
-                    picture: jmeterImgData,
+                    image: jmeterImg,
                     title: 'JMeter-to-k6',
                     description: 'Convert a JMeter .jmx file to k6 script.',
                     url: 'https://github.com/k6io/jmeter-to-k6',
                   },
                   {
-                    picture: postmanImgData,
+                    image: postmanImg,
                     title: 'Postman-to-k6',
                     description: 'Convert a Postman collection to k6 script.',
                     url: 'https://github.com/k6io/postman-to-k6',
                   },
                   {
-                    picture: swaggerImgData,
+                    image: swaggerImg,
                     title: 'OpenAPI generator',
                     description:
                       'Convert Swagger/OpenAPI specification to k6 script.',
