@@ -38,7 +38,7 @@
     "dotenv": "^10.0.0",
     "gatsby": "^3.6.2",
     "gatsby-image": "^3.6.0",
-    "gatsby-plugin-algolia": "^0.20.1",
+    "gatsby-plugin-algolia": "^0.26.0",
     "gatsby-plugin-catch-links": "^3.6.0",
     "gatsby-plugin-google-analytics": "^3.6.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
